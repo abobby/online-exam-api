@@ -10,13 +10,14 @@ services:
       - ".:/var/www/html"
       - "./docker/config/vhost.conf:/etc/apache2/site-available/000-default.conf"
     depends_on:
-      - mysqldb
+      - exam-mysql
     restart:
       on-failure
-  mysqldb:
+  exam-mysql:
+   container_name: exam-mysql
    image: percona:latest
    ports:
-     - '3310:3306'
+     - '3306:3306'
    environment:
       MYSQL_DATABASE: webdb
       MYSQL_PASSWORD: secret
