@@ -3,7 +3,7 @@ services:
   exam-api:
     container_name: exam-api
     build: ./docker
-    image: abobby/php-apache:latest
+    image: abobby/php-apache
     ports:
       - '8080:80'
     volumes:
